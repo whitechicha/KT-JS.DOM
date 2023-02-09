@@ -16,12 +16,6 @@
         }
     </script>
 
-    <script>
-        {
-
-        }
-    </script>
-
 </head>
 
 <body>
@@ -30,89 +24,56 @@
 
     </form>
 
-    <script>
-        /*
-        let i = 0;
-        while (i < 3) {
-            alert(i);
-            i++;
-        }
-        let i = 3;
-        while (i) {
-            alert(i);
-            i--;
-        }
-    </script>
+<script>
+const mas = [-15, -20, -5, -7, 5, 2, 1, 9, -3, 4];
+console.log('Изначальный массив: ' + mas);
+const filter = mas.filter(num => (num > -9) && (num < 3));
+console.log(filter);
+
+const take = mas.map (num => num - 5);
+console.log(take);
+</script>
 
 <script>
-    /*
-    let M = [0,0,0];
-    M[0] = [3,2,1];
-    M[1] = [7,8,9];
-    M[2] = [5,6,7];
-    Max = M[0][0];
-    Ind = [0,0];
-    for (i=0; i<M.length; i++) {
-    for (j=0; j<M.length; j++) {
-    if (M[i][j] > Max) {
-    Max = M[i][j];
-    Ind[0] = i;
-    Ind[1] = j;
-    }
-    }
-    }
-    document.write('Максимальный ' + Max);
-    document.write('<br>')
-    document.write('Его индекс [' + Ind[0] + '][' + Ind[1] + ']');
-    */
-    </script>
-
-    <script>
-        function callback1(guestion, yes, no) {
-if (confirm(guestion)) yes()
-else no();
+let myWindow;
+function myWindowOpen() {
+myWindow = window.open("http://www.yandex.ru", "myWindow", "top=200, left=200,width=250, height=250");
 }
-function callbackYes(){
-alert("Вы согласились!");
+ function myWindowClose() {
+ if (myWindow) {
+ myWindow.close();
+ myWindow = null;
 }
-function callbackNo(){
-alert("Вы отказались!");
 }
-callback1("Вы согласны?", callbackYes, callbackNo);
-    </script>
+ function myWindowFocus() {
+ myWindow.focus();
+}
+ function myWindowBlur() {
+ myWindow.blur();
+}
+</script>
+<button onClick="myWindowOpen()">Oткрыть oкно</button>
+<button onClick="myWindowClose()">Закрыть окно</button>
+<button onclick="myWindowFocus()">Передать фокус окну</button>
+<button onclick="myWindowBlur()">Переместить окно на задний план</button>
 
 <script>
-   let JSON1 = '[12, 45, 20, 135, 7]';// массив
-console.log(JSON1);
-let json2 = '{"firstName":"Иванов","lastName":"Иван","age": 20}'; // простой объект
-let data2 = JSON.parse(JSON2); //метод parse объекта JSON распарсил строку json2 в объект data2 с набором атрибутов
-console.log(data2);
-console.log(data2.age);
-console.log(data2.firstName);
-console.log(data2.lastName);
-let obj = {
-firstName:"Петров",
-lastName:"Петр",
-age: 21
-}
-console.log(obj);
-let json3 = JSON.stringify(obj);//метод stringify объекта JSON вернул объект obj в строку JSON3
-console.log(JSON3); // объект со сложной структурой
-let json4 = `{ 
-    "book": {
-"number1": {
-"author":"Достоевский",
-"title": "Идиот"
-},
-"number2":{
-"author":"Чехов",
-"title": "Палата № 6"
-}
-}
-}`
-let data4 = JSON.parse(JSON4);
-console.log(data4);
-console.log(data4.book.number1.title);
+    const width = window.innerWidth;
+    console.log(width);
+    const height = window.innerHeight;
+    console.log(height);
+</script>
+
+<script>
+const width1 = window.outerWidth;
+const height1 = window.outerHeight;
+console.log(width1, height1);
+</script>
+
+<script>
+    const screenX = window.screenX;
+    const screenY = window.screenY;
+    console.log(screenX, screenY);
 </script>
 
 </body>
